@@ -11,4 +11,8 @@ class Plugger
             return true
         end
     end
+
+    def resolve_plugin(path)
+                
+    end
 end

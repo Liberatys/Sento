@@ -28,5 +28,9 @@ class Heart
     def get_loggers
         return @loggers
     end
+
+    def resolve_plugin_path(path)
+        
+    end
     
 end

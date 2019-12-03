@@ -18,4 +18,8 @@ class Abyss
     def add_plugin(plugin)
         @heart.add_plugin(plugin)
     end
+
+    def resolve_plugin_path(path)
+        return @heart.resolve_plugin_path(path)
+    end
 end
