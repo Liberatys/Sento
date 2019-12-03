@@ -4,6 +4,7 @@ class PathResolver
 
     def initialize(path)
       @path = path
+      @static_path = path
     end
 
   def get_current_path_head()
@@ -22,6 +23,10 @@ class PathResolver
   
   def get_current_path()
     return @path
+  end
+
+  def get_original_path
+    return static_path
   end
 
 end
