@@ -4,7 +4,11 @@
 #! They only get the interface of the abyss, that is used to perform the main operations.
 class Abyss
     def initialize(heart)
-        @heart = heart
+        if (heart.is_a?(Heart))
+            @heart = heart
+        else
+            raise "Abyss only takes Heart as a parameter in creation"
+        end
     end
 
     def add_logger(logger)
@@ -15,8 +19,12 @@ class Abyss
         @heart.add_configurator(configurator)
     end
 
-    def add_plugin(plugin)
-        @heart.add_plugin(plugin)
+    def add_plugin(path, plugin)
+        return @heart.add_plugin(path, plugin)
+    end
+
+    def add_plugger(plugger)
+        return @heart.add_plugger(plugger)
     end
 
     def resolve_plugin_path(path)
