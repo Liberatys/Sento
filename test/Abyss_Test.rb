@@ -5,7 +5,8 @@ describe Abyss do
   it 'has an adapter for pluggers' do
     heart = Heart.new
     abyss = described_class.new(heart)
-    abyss.add_plugin(Plugger.new)
+    expect(abyss.add_plugger(Plugger.new("root"))).to eq(true)
+    expect(abyss.add_plugin("root.main",Plugin.new("main"))).to eq(true)
   end
 
   it 'has an adapter for configurators' do

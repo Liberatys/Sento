@@ -3,8 +3,9 @@ describe Heart do
     
     it 'has an adapter for pluggers' do
         heart = described_class.new()
-        heart.add_plugin(Plugger.new())
-        expect(heart.get_plugins().length).to eq(1)
+        expect(heart.add_plugger(Plugger.new("dom"))).to eq(true)
+        expect(heart.add_plugin("dom.root",Plugin.new("root"))).to eq(true)
+        expect(heart.get_plugin_count()).to eq(2)
     end
 
     it 'has an adapter for configurators' do
