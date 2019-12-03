@@ -1,5 +1,5 @@
 # Sento
-A MacOs setup and configuration tool that allows configuration from a single file
+
 
 ## Idea
 The idea of the application is to have a configuration tool, that ready a formated file and executes certain actions on a plugin in the backend. 

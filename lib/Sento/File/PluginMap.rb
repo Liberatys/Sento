@@ -4,9 +4,13 @@ class PluginMap
         @start = []
         @end = []
         @brackets_content = []
-        @plugin_names = ""
+        @plugin_names = []
     end
     
+    def get_plugin_names()
+        return @plugin_names
+    end
+
     def add_start(index)
         @start.push(index)
     end
