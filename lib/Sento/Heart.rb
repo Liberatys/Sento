@@ -6,7 +6,7 @@ class Heart
         @configurators = []
         @loggers = []
     end
-
+    
     def add_plugin(path, plugin)
         if @plugin_count <= 0
             raise "Heart | before adding a plugin, first add a root plugger"
