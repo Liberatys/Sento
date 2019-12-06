@@ -23,7 +23,10 @@ def execute_plugins(file_content, abyss)
     plugin = abyss.resolve_plugin_path(plugin_call.plugin_name)
     raise plugin unless plugin.is_a?(Plugger)
 
-    plugin.public_send(plugin_call.get_plugin_method, plugin_call.get_arguments)
+    progress_message = plugin.public_send(plugin_call.get_plugin_method, plugin_call.get_arguments)
+    if progress_message == "Unknown command"
+      next
+    end
   end
 end
 

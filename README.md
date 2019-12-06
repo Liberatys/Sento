@@ -1,7 +1,7 @@
 # Sento
 
 ## Idea
-The idea of the application is to have a configuration tool, that ready a formated file and executes certain actions on a plugin in the backend. 
+The idea of the application is to have a configuration tool, that reads a formated file and executes certain actions on a plugin in the backend. 
 
 Example:
 
@@ -10,7 +10,7 @@ Example:
 
 This format would be parsed als following:
 
-    Call Plugin [brew] and run the install fuction with the argument (mysql).
+    Call Plugin [brew] and run the install function with the argument (mysql).
     The Plugin [brew] is stored and managed by the plugger [plug].
     This plugin will then go into the backend and execute the needed functions in order to install mysql from brew.
 
@@ -30,16 +30,17 @@ Sento can be used on any platform, that supports ruby and has people writing plu
 
 ## Features
 
- * Install from brew
- * Configure shell and environement
- * Install programming languages
- * Install and setup databases
- * Install extensions for visual studio code
- * Easy to self implement plugin system in order to adjust the application to your needs.
+    * Everything you can implement in ruby
+    * A framework for additional plugins
+    * 
 
 ## Progress
 
-    * Functional plugin framework, that allows drop in plugins for your need
+* Functional plugin framework, that allows drop in plugins for your need
+* First working plugins
+  * Brew
+  * VSCode
+  * Choco
 
 ## Versioning
 This project is using semantic versioning. 
@@ -49,4 +50,11 @@ Thus following the pattern of: **major.minor.patch**
 
 
 
+## List of Plugins
+* [Brew | Liberatys](Plugins/Brew.md)
+* [Choco | Liberatys](Plugins/Choco.md)
+* [Vscode Extensions | Liberatys](Plugins/VSCode_Extensions.md)
+
+
+**Your plugin could be here.... just pull that request**
 
