@@ -2,7 +2,8 @@
 
 require_relative '../../lib/Sento.rb'
 describe FileConverter do
-  it 'parses string into toml object' do
+  
+  it 'parses string into sonol object' do
     content = <<-SONOL
     [root]
     dasd

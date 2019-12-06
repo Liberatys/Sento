@@ -7,8 +7,24 @@ class PluginMap
         @plugin_names = []
     end
     
-    def get_plugin_names()
+    def get_plugin_names
         return @plugin_names
+    end
+
+    def get_start
+        @start
+    end
+
+    def get_end
+        @end
+    end
+
+    def get_brackets_content
+        @brackets_content
+    end
+
+    def get_plugin_names
+        @plugin_names
     end
 
     def add_start(index)

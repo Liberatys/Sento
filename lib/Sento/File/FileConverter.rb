@@ -12,22 +12,22 @@ class FileConverter
   # TODO improve on the parser
   def parse_to_sonol
     current_iteration_string = ''
-    record_values = nil
     @file_content.split('').each_with_index do |character, index|
       if character == '['
-        record_values = false
-        @plugin_map.add_brackets_value(current_iteration_string)
+        if current_iteration_string.empty? == false
+          @plugin_map.add_brackets_value(current_iteration_string)
+        end
         @plugin_map.add_start(index)
-        current_iteration_string = ''
+        current_iteration_string = ""
       elsif character == ']'
         @plugin_map.add_end(index)
-        record_values = true
         @plugin_map.add_plugin_name(current_iteration_string)
         current_iteration_string = ""
       else
         current_iteration_string += character
       end
     end
+    @plugin_map.add_brackets_value(current_iteration_string)
     # ! wrap plugin_map with a sonol wrapper, that will function as a proxy for the parsed file content
     return false if @plugin_map.is_valid_brackets_count == false
     @sonol_object = Sonol.new(@plugin_map)
