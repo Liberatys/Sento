@@ -1,8 +1,5 @@
 # Sento
 
-![Sento Logo](sento_logo.PNG =200x200)
-
-
 ## Idea
 The idea of the application is to have a configuration tool, that reads a formated file and executes certain actions on a plugin in the backend. 
 
