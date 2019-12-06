@@ -31,13 +31,9 @@ class Plugger
     if plugin == nil
       return "No plugin with that name"
     end
-    #TODO refactor this check guard
     #! if not set, the method will try to call resolve_plugin on an empty plugin/plugger
-    if resolver.get_current_path().length == 0
-      return plugin
-    else
-      plugin.resolve_plugin(resolver)
-    end
+    return plugin unless resolver.get_current_path().empty? == false
+    plugin.resolve_plugin(resolver)
   end
 
   #! think of the listing as a folder structure, where all chidren plugins are indeted

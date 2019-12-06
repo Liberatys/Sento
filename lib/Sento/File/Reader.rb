@@ -7,12 +7,9 @@ class Reader
   def validet_file_path
     @abs_path = File.expand_path(@file_path)
     is_valid = File.file?(@abs_path)
-    if is_valid
-      return true
-    else
-      #! if the file can't be found, the application should throw an error and not just a false return
-      return false
-    end
+    return true if is_valid
+
+    false
   end
 
   def get_file_content

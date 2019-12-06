@@ -47,7 +47,7 @@ class PluginMap
   end
 
   def is_valid_brackets_count
-    if @start.length == 0 or @end.length == 0
+    if @start.empty? || @end.empty?
       return false
     end
     if @start.length != @end.length

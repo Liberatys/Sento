@@ -13,12 +13,10 @@ class Sonol
   end
 
   def build_plugin_calls
-    if @plugin_map.is_valid_brackets_count == false
-      return false
-    end
+    return false unless @plugin_map.is_valid_brackets_count
+
     content = @plugin_map.get_brackets_content
     plugin_names = @plugin_map.get_plugin_names
-    #TODO refactor this part of the code
     for x in 0..plugin_names.length - 1
       plugin_call = nil
       plug_name = plugin_names[x]
