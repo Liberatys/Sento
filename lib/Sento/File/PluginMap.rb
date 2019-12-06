@@ -27,6 +27,8 @@ class PluginMap
         @plugin_names
     end
 
+    #! these methods are needed for later validation
+    ##!
     def add_start(index)
         @start.push(index)
     end
@@ -34,6 +36,7 @@ class PluginMap
     def add_end(index)
         @end.push(index)
     end
+    ##!
 
     def add_plugin_name(name)
         @plugin_names.push(name)

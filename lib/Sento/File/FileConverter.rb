@@ -9,12 +9,14 @@ class FileConverter
 
   # ! sonol is the self-developed file format for this project
   # ! at first toml was looked at, but the configuration doesn't allow easy list
-  # TODO improve on the parser
   def parse_to_sonol
     current_iteration_string = ''
     @file_content.split('').each_with_index do |character, index|
       if character == '['
-        if current_iteration_string.empty? == false
+        # first line before first bracket contains only spaces, therefore its not
+        # a valid input for content.
+        # If the string only consists of spaces, don't add it to the plugin_map
+        if current_iteration_string.strip.empty? == false
           @plugin_map.add_brackets_value(current_iteration_string)
         end
         @plugin_map.add_start(index)

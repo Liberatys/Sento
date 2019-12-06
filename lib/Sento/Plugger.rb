@@ -39,8 +39,17 @@ class Plugger
             plugin.resolve_plugin(resolver)
         end
     end
-
+    
+    #! think of the listing as a folder structure, where all chidren plugins are indeted
     def list_plugins(indent)
-        
+        listing = []
+        @plugin_map.each do |key, value|
+            indentation = ' ' * indent
+            listing.push(indentation + value.name)
+            listing.concat value.list_plugins(indent + 2)
+        end
+        return listing
     end
+
+    
 end

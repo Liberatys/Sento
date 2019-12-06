@@ -1,10 +1,11 @@
 class PluginCall
+
     def initialize(plugin_name)
         @plugin_name = plugin_name
         @arguments = []
         @plugin_method = "install"
     end
-
+    
     def add_argument(argument)
         @arguments.push(argument)
     end
@@ -34,4 +35,5 @@ class PluginCall
     def get_name
         return @plugin_name
     end
+    
 end
