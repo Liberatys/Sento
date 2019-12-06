@@ -27,6 +27,8 @@ def execute_plugins(file_content, abyss)
     if progress_message == "Unknown command"
       next
     end
+
+    abyss.log_message(progress_message, LogType::INFORMATION)
   end
 end
 

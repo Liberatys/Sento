@@ -17,7 +17,7 @@ class Heart
     if plug == nil
       raise "Heart | found no plugger with the name #{head}"
     end
-    return plug.add_plugin(resolver, plugin)
+    plug.add_plugin(resolver, plugin)
   end
 
   def add_plugger(plugger)
@@ -31,23 +31,30 @@ class Heart
   end
 
   def get_configurators
-    return @configurators
+    @configurators
   end
 
   def add_logger(logger)
+    return false unless logger.is_a?(Logger)
     @loggers.push(logger)
   end
 
   def get_loggers
-    return @loggers
+    @loggers
   end
 
   def get_plugin_count()
-    return @plugin_count
+    @plugin_count
+  end
+
+  def log_message(message, type)
+    @loggers.each do |logger|
+      logger.pipe(message, type)
+    end
   end
 
   def resolve_plugin_path(path)
-    if path.length == 0
+    if path.empty?
       raise "Heart | resolve_plugin_path must be given a valid path #{path} is invalid"
     end
     resolver = PathResolver.new(path)

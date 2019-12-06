@@ -6,6 +6,7 @@ class Logger
   #! your std.err is someones input
 
   def format(message, type)
+    return message
   end
 
   def log(message)
@@ -13,9 +14,6 @@ class Logger
   end
 
   def pipe(message, type)
-    if !type.is_a?(LogType)
-      raise "Type for loging pipe has to be a LogType | given was #{type}"
-    end
-    self.log(self.format(message))
+    log(self.format(message, type))
   end
 end

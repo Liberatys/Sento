@@ -7,6 +7,7 @@ require_relative "../lib/Sento.rb"
 
 def build_abyss()
   abyss = Abyss.new(Heart.new())
+  abyss.add_logger(Logger.new())
   plugger = Plugger.new("root")
   abyss.add_plugger(plugger)
   abyss.add_plugin("root.folder_struct", FolderStructurePlugin.new("folder_struct"))

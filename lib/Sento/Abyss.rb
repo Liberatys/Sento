@@ -29,4 +29,8 @@ class Abyss
   def resolve_plugin_path(path)
     return @heart.resolve_plugin_path(path)
   end
+
+  def log_message(message, type)
+    @heart.log_message(message, type)
+  end
 end
