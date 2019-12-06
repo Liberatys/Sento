@@ -9,9 +9,7 @@ def build_abyss()
   abyss = Abyss.new(Heart.new())
   plugger = Plugger.new("root")
   abyss.add_plugger(plugger)
-  abyss.add_plugin("root.choco", ChocoPlug.new("choco"))
-  abyss.add_plugin("root.brew", BrewPlugin.new("brew"))
-  abyss.add_plugin("root.vscode", VSCodePlugin.new("vscode"))
+  abyss.add_plugin("root.folder_struct", FolderStructurePlugin.new("folder_struct"))
   abyss
 end
 

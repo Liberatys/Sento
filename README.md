@@ -1,5 +1,8 @@
 # Sento
 
+![Sento Logo](sento_logo.PNG =200x200)
+
+
 ## Idea
 The idea of the application is to have a configuration tool, that reads a formated file and executes certain actions on a plugin in the backend. 
 
@@ -30,17 +33,19 @@ Sento can be used on any platform, that supports ruby and has people writing plu
 
 ## Features
 
-    * Everything you can implement in ruby
-    * A framework for additional plugins
-    * 
+* Everything you can implement in ruby
+* A framework for additional plugins
+* Expandable system, where others can add their plugins
+* 
 
 ## Progress
 
 * Functional plugin framework, that allows drop in plugins for your need
-* First working plugins
+* **First working plugins**
   * Brew
   * VSCode
   * Choco
+  * Folder Structure
 
 ## Versioning
 This project is using semantic versioning. 
@@ -54,6 +59,7 @@ Thus following the pattern of: **major.minor.patch**
 * [Brew | Liberatys](Plugins/Brew.md)
 * [Choco | Liberatys](Plugins/Choco.md)
 * [Vscode Extensions | Liberatys](Plugins/VSCode_Extensions.md)
+* [Folder Structure | Liberatys](Plugins/Folder_Structure.md)
 
 
 **Your plugin could be here.... just pull that request**
