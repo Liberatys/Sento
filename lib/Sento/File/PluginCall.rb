@@ -1,4 +1,5 @@
 class PluginCall
+    attr_reader :plugin_name
 
     def initialize(plugin_name)
         @plugin_name = plugin_name
