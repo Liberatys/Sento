@@ -5,6 +5,6 @@ class Plugin < Plugger
 
 
   def install(args)
-    p args
+    raise "The system called the default install method in a plugin, you have either not set the plugin method, or you haven't implemented this method yet"
   end
 end

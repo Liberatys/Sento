@@ -1,8 +1,5 @@
-[root.root]
+[root.brew]
 dasd
 install
 gogo
-[root.bottom]
-adsasd
-[root.upper]
-dasdad
+[]

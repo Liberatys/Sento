@@ -1,6 +1,5 @@
 # Sento
 
-
 ## Idea
 The idea of the application is to have a configuration tool, that ready a formated file and executes certain actions on a plugin in the backend. 
 
@@ -20,7 +19,6 @@ Each plugin may also have other plugins connected to it. Those sup-plugins can t
 
 Will call the functions from the plugin extensions in the plugin vscode.
 
-
 ## Features
  * Install from brew
  * Configure shell and environement
@@ -30,9 +28,10 @@ Will call the functions from the plugin extensions in the plugin vscode.
  * Easy to self implement plugin system in order to adjust the application to your needs.
 
 ## Progress
+    * Functional plugin framework, that allows drop in plugins for your need
 
 ## Versioning
 This project is using semantic versioning. 
 Thus following the pattern of: **major.minor.patch**
 
-**Version**: 0.0.0
+**Version**: 0.1.0
