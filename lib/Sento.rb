@@ -1,13 +1,16 @@
-require_relative "./Sento/Heart.rb"
-require_relative "./Sento/Plugin.rb"
-require_relative "./Sento/Plugger.rb"
-require_relative "./Sento/Configurator.rb"
-require_relative "./Sento/Logger.rb"
-require_relative "./Sento/Abyss.rb"
-require_relative "./Sento/PathResolver.rb"
+require_relative "./Sento/Heart"
+require_relative "./Sento/Plugin"
+require_relative "./Sento/Plugger"
+require_relative "./Sento/Configurator"
+require_relative "./Sento/Logger"
+require_relative "./Sento/Abyss"
+require_relative "./Sento/PathResolver"
 require_relative "./Sento/File/Sento_File"
 require_relative "./Sento/LogType"
-require_relative "./Sento/Plugins/plugins.rb"
+require_relative "./Sento/Plugins/plugins"
+require_relative "./Sento/Loggers/loggers"
+require "date"
+require "rainbow"
 
 def run_sento(file_path, abyss)
   content = get_file_content(file_path)
@@ -25,10 +28,10 @@ def execute_plugins(file_content, abyss)
 
     progress_message = plugin.public_send(plugin_call.get_plugin_method, plugin_call.get_arguments)
     if progress_message == "Unknown command"
+      abyss.log_message(plugin.name, "Unknown command", LogType::WARNING)
       next
     end
-
-    abyss.log_message(progress_message, LogType::INFORMATION)
+    abyss.log_message(plugin.name, progress_message, LogType::INFORMATION)
   end
 end
 

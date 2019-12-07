@@ -47,9 +47,9 @@ class Heart
     @plugin_count
   end
 
-  def log_message(message, type)
+  def log_message(entity, message, type)
     @loggers.each do |logger|
-      logger.pipe(message, type)
+      logger.pipe(entity, message, type)
     end
   end
 

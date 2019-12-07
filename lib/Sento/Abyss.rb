@@ -19,18 +19,18 @@ class Abyss
   end
 
   def add_plugin(path, plugin)
-    return @heart.add_plugin(path, plugin)
+    @heart.add_plugin(path, plugin)
   end
 
   def add_plugger(plugger)
-    return @heart.add_plugger(plugger)
+    @heart.add_plugger(plugger)
   end
 
   def resolve_plugin_path(path)
-    return @heart.resolve_plugin_path(path)
+    @heart.resolve_plugin_path(path)
   end
 
-  def log_message(message, type)
-    @heart.log_message(message, type)
+  def log_message(entity, message, type)
+    @heart.log_message(entity, message, type)
   end
 end
