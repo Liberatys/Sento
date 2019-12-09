@@ -1,8 +1,0 @@
-2019-12-09  8:58:26 INFORMATION brew The brew plugin is only available on MacOs | OsX
-2019-12-09  9:03:27 INFORMATION brew ["Installation of mysql failed"]
-2019-12-09  9:07:39 INFORMATION brew ["Install of mysql failed"]
-2019-12-09  9:07:39 INFORMATION brew ["Update of mysql failed"]
-2019-12-09  9:08:13 INFORMATION brew ["Install of mysql failed"]
-2019-12-09  9:08:30 INFORMATION brew ["Successfully upgrade mysql"]
-2019-12-09  9:32:14 INFORMATION brew ["Successfully install mysql"]
-2019-12-09  9:32:17 INFORMATION brew ["Successfully upgrade mysql"]

@@ -11,6 +11,8 @@ require_relative './Sento/File/Sento_File'
 require_relative './Sento/LogType'
 require_relative './Sento/Plugins/plugins'
 require_relative './Sento/Loggers/loggers'
+require_relative './Sento/Loader/loader.rb'
+
 require 'date'
 require 'rainbow'
 
