@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Sonol
   def initialize(plugin_map)
     @plugin_map = plugin_map
@@ -5,7 +7,7 @@ class Sonol
   end
 
   def get_plugin_paths
-    return @plugin_map.get_plugin_names
+    @plugin_map.get_plugin_names
   end
 
   def get_plugin_calls
@@ -17,10 +19,10 @@ class Sonol
 
     content = @plugin_map.get_brackets_content
     plugin_names = @plugin_map.get_plugin_names
-    for x in 0..plugin_names.length - 1
+    (0..plugin_names.length - 1).each do |x|
       plugin_call = nil
       plug_name = plugin_names[x]
-      split_plugin_naming = plug_name.split("|")
+      split_plugin_naming = plug_name.split('|')
       if split_plugin_naming.length > 1
         plugin_call = PluginCall.new(split_plugin_naming[0].strip!)
         plugin_call.set_plugin_run_method(split_plugin_naming[1].strip!)

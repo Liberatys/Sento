@@ -1,3 +1,0 @@
-[root.folder_struct | create]
-./test/grep/test
-

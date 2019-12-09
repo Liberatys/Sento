@@ -1,5 +1,0 @@
-[root.brew]
-dasd
-install
-gogo
-[]

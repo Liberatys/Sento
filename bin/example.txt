@@ -1,0 +1,5 @@
+[root.brew]
+mysql
+
+[root.brew | upgrade]
+mysql

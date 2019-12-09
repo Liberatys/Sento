@@ -1,19 +1,27 @@
-require_relative "../lib/Sento.rb"
+# frozen_string_literal: true
 
-#! current todo
-# TODO move raise messages to the front, not in the framework engine
-# TODO implement more utilty functions for plugins
-#! task-list
-# TODO find a good method to 'inject' plugins into the system
+require_relative '../lib/Sento.rb'
 
-def build_abyss()
-  abyss = Abyss.new(Heart.new())
-  abyss.add_logger(Logger.new())
-  abyss.add_logger(FileLogger.new("./testing.txt"))
-  plugger = Plugger.new("root")
+def build_abyss
+  abyss = Abyss.new(Heart.new)
+  abyss.add_logger(Logger.new)
+  abyss.add_logger(FileLogger.new('./testing.txt'))
+  plugger = Plugger.new('root')
   abyss.add_plugger(plugger)
-  abyss.add_plugin("root.folder_struct", FolderStructurePlugin.new("folder_struct"))
+  abyss.add_plugin('root.brew', BrewPlugin.new('brew'))
   abyss
 end
 
-run_sento("../examples/test_valid_format.txt", build_abyss)
+def read_command_line_arguments
+  input_args = ARGV
+  if input_args.empty?
+    raise 'Insufficient commandline arguments | No filepath specified'
+  end
+
+  file_path, *arguments = ARGV
+  raise "Invalid filepath #{file_path}" unless File.file?(file_path)
+
+  File.expand_path(file_path)
+end
+
+run_sento(read_command_line_arguments, build_abyss)

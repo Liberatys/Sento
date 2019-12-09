@@ -1,7 +1,7 @@
 # Sento
 
 ## Idea
-The idea of the application is to have a configuration tool, that reads a formated file and executes certain actions on a plugin in the backend. 
+The idea of the application is to have a configuration tool, that reads a formated file and executes certain actions on a plugin in the backend.
 
 Example:
 
@@ -20,9 +20,9 @@ Each plugin may also have other plugins connected to it. Those sup-plugins can t
 
 Will call the functions from the plugin extensions in the plugin vscode, where vscode is managed by the plugger [plug].
 
-## What Sento can be used for 
+## What Sento can be used for
 
-The first thing that comes to mind the setup procedure for a new employee in the company. 
+The first thing that comes to mind the setup procedure for a new employee in the company.
 Install Sento on his computer and run a precompiled list of installations on your own plugins.
 
 In the beginning, the tool was only ment for MacOs. But now some hours into the project, I have given up that.
@@ -45,7 +45,7 @@ Sento can be used on any platform, that supports ruby and has people writing plu
   * Folder Structure
 
 ## Versioning
-This project is using semantic versioning. 
+This project is using semantic versioning.
 Thus following the pattern of: **major.minor.patch**
 
 **Version**: 0.1.0
@@ -61,3 +61,9 @@ Thus following the pattern of: **major.minor.patch**
 
 **Your plugin could be here.... just pull that request**
 
+
+## Examples
+[General](./Examples/Examples.md)
+[Windows]()
+[MacOs]()
+[Complete]()

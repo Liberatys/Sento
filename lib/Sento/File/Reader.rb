@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Reader
   def initialize(file_path)
     @file_path = file_path
-    @abs_path = ""
+    @abs_path = ''
   end
 
   def validet_file_path
@@ -14,6 +16,6 @@ class Reader
 
   def get_file_content
     data = File.read(@abs_path)
-    return data
+    data
   end
 end

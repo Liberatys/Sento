@@ -8,7 +8,7 @@ This means, development, follows the pattern of RGR.
     R : Refactor => Refactor the written code without breaking the test
 
 # Red
-First of all, a test is being written. You think of what task has to be performed by a class and its interface and then write a test to validate your believed functionality. 
+First of all, a test is being written. You think of what task has to be performed by a class and its interface and then write a test to validate your believed functionality.
 
 **An example:**
 
@@ -26,3 +26,4 @@ So one would implement the Terminator class and its method. Without any implemen
 
 # Refactor
 
+After the tests are passing, one should go back to his code and refactor parts that seem difficult to maintain and work with. Because there are no clear definitions of what that really means, every contributor is free to decide what it means for them. But please keep in mind that other people have to work with the code and may find it difficult if you try to over simplify the code.
