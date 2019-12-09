@@ -63,7 +63,8 @@ Thus following the pattern of: **major.minor.patch**
 
 
 ## Examples
-[General](./Examples/Examples.md)
-[Windows]()
-[MacOs]()
-[Complete]()
+
+* [General](./Examples/Examples.md)
+* [Windows]()
+* [MacOs]()
+* [Complete]()
