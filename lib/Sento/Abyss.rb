@@ -1,12 +1,14 @@
-#! Abyss handles the wrapping arround the heart.
-#! this ensured, that the developer as well as "User" don't have to interact with the get/set interface of the heart.
-#! They only get the interface of the abyss, that is used to perform the main operations.
+# frozen_string_literal: true
+
+# ! Abyss handles the wrapping arround the heart.
+# ! this ensured, that the developer as well as "User" don't have to interact with the get/set interface of the heart.
+# ! They only get the interface of the abyss, that is used to perform the main operations.
 class Abyss
   def initialize(heart)
-    if (heart.is_a?(Heart))
+    if heart.is_a?(Heart)
       @heart = heart
     else
-      raise "Abyss only takes Heart as a parameter in creation"
+      raise 'Abyss only takes Heart as a parameter in creation'
     end
   end
 

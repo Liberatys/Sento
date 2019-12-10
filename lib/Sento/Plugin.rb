@@ -5,7 +5,7 @@ require_relative './Platform.rb'
 class Plugin < Plugger
   def install(_args)
     # TODO: write a better message for this case
-    raise "The system called the default install method in a plugin, you have either not set the plugin method, or you haven't implemented this method yet | #{name}"
+    "The system called the default install method in a plugin, you have either not set the plugin method, or you haven't implemented this method yet | #{name}"
   end
 
   def supported_platform?(platforms)

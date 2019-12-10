@@ -1,4 +1,5 @@
 class Heart
+  
   def initialize
     @plugin_count = 0
     @plugger = Hash.new
@@ -56,6 +57,9 @@ class Heart
   def resolve_plugin_path(path)
     if path.empty?
       raise "Heart | resolve_plugin_path must be given a valid path #{path} is invalid"
+    end
+    if path == "-"
+      return @plugger["root"]
     end
     resolver = PathResolver.new(path)
     resolved_path = resolver.get_current_path_head()

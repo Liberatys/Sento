@@ -1,18 +1,23 @@
 # frozen_string_literal: true
-
 require_relative '../lib/Sento.rb'
 
 # TODO: change name for reader method validate file path
 
-def build_abyss
+def setup_abyss
   abyss = Abyss.new(Heart.new)
   abyss.add_logger(Logger.new)
   abyss.add_logger(FileLogger.new('testing.txt'))
   # ! add plugger
   plugger = Plugger.new('root')
   abyss.add_plugger(plugger)
-  abyss.add_plugin('root.brew', BrewPlugin.new('brew'))
+  abyss
+end
+
+def build_abyss
+  abyss = setup_abyss
+  abyss.add_plugin('root.folder_structure', FolderStructurePlugin.new('folder_structure'))
   # ! load plugins
+  # ! abyss = load_by_file
   abyss
 end
 
@@ -25,6 +30,8 @@ def load_by_file(_file_string, abyss)
   loaded_plugins.each do |plug|
     abyss.add_plugin(plug.get_plugin_path, plug.get_plugin)
   end
+
+  abyss
 end
 
 def read_command_line_arguments

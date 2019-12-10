@@ -1,5 +1,2 @@
-[root.brew]
-mysql
-
-[root.brew | upgrade]
-mysql
+[root.folder_structure]
+./testing/exact/testing.txt
