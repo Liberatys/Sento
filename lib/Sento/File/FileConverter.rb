@@ -26,7 +26,6 @@ class FileConverter
         unless current_iteration_string.empty? == false
           raise 'Empty plugin name'
         end
-
         @plugin_map.add_plugin_name(current_iteration_string)
         current_iteration_string = ''
       else
@@ -34,9 +33,8 @@ class FileConverter
       end
     end
     @plugin_map.add_brackets_value(current_iteration_string)
-    # ! wrap plugin_map with a sonol wrapper, that will function as a proxy for the parsed file content
     return false if @plugin_map.is_valid_brackets_count == false
-
+    # ! wrap plugin_map with a sonol wrapper, that will function as a proxy for the parsed file content
     @sonol_object = Sonol.new(@plugin_map)
     @sonol_object
   end

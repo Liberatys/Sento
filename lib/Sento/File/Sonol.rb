@@ -19,9 +19,9 @@ class Sonol
 
     content = @plugin_map.get_brackets_content
     plugin_names = @plugin_map.get_plugin_names
-    (0..plugin_names.length - 1).each do |x|
+    (0..plugin_names.length - 1).each do |index|
       plugin_call = nil
-      plug_name = plugin_names[x]
+      plug_name = plugin_names[index]
       split_plugin_naming = plug_name.split('|')
       if split_plugin_naming.length > 1
         plugin_call = PluginCall.new(split_plugin_naming[0].strip!)
@@ -29,7 +29,7 @@ class Sonol
       else
         plugin_call = PluginCall.new(plug_name)
       end
-      plugin_call.set_plugin_content(content[x])
+      plugin_call.set_plugin_content(content[index])
       @plugin_calls.push(plugin_call)
     end
   end

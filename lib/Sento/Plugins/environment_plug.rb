@@ -8,5 +8,7 @@ class EnvironmentPlugin < Plugin
 
   def set(arguments); end
 
+  def add(arguments); end
+
   def platform_switch; end
 end

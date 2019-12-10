@@ -6,16 +6,14 @@ class PluginLoader
     @file_reader = file_reader
   end
 
-  def load_plugins
-    file_content = @file_reader.get_file_content
+  def load_plugins(file_content="")
+    if file_content.empty?
+      file_content = @file_reader.get_file_content
+    end
     file_lines = file_content.split('\n')
     loads = []
     file_lines.each do |line|
-      spliting = line.split('|')
-      plugin_class_name = spliting[0].strip
-      plugin_path = spliting[1].strip
-      plugin_route = spliting[2].strip
-      plugin_name = spliting[3].strip
+      plugin_class_name,plugin_path,plugin_route,plugin_name = extract_plugin_values(line)
       next if validate_file_path(plugin_path) == false
 
       load_file(plugin_path)
@@ -27,6 +25,15 @@ class PluginLoader
       loads.push(LoadCall.new(plugin, plugin_route))
     end
     loads
+  end
+
+  def extract_plugin_values(line)
+      spliting = line.split('|')
+      plugin_class_name = spliting[0].strip
+      plugin_path = spliting[1].strip
+      plugin_route = spliting[2].strip
+      plugin_name = spliting[3].strip
+      return plugin_class_name,plugin_path,plugin_route,plugin_name
   end
 
   def validate_file_path(path)

@@ -21,7 +21,7 @@ class Plugin < Plugger
       Platform::MACOS
     elsif OS.windows?
       Platform::WINDOWS
-    elsif OS.linux
+    elsif OS.linux?
       Platform::UNIX
     end
   end

@@ -3,10 +3,12 @@
 class PluginCall
   attr_reader :plugin_name
 
+  @@default_plugin_method = 'install'
+
   def initialize(plugin_name)
     @plugin_name = plugin_name
     @arguments = []
-    @plugin_method = 'install'
+    @plugin_method = @@default_plugin_method
   end
 
   def add_argument(argument)
