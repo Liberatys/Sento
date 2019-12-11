@@ -34,6 +34,14 @@ def load_by_file(_file_string, abyss)
   abyss
 end
 
+def read_command_line_args
+  reader = ArgumentReader.new(ARGV)
+  reader.parse_arguments(["-i"])
+  input_file_flag = reader.get_flag_value_for_key("-i")
+  p input_file_flag
+  return input_file_flag.get_values[0]
+end
+
 def read_command_line_arguments
   input_args = ARGV
   if input_args.empty?
@@ -46,4 +54,4 @@ def read_command_line_arguments
   File.expand_path(file_path)
 end
 
-run_sento(read_command_line_arguments, build_abyss)
+run_sento(read_command_line_args, build_abyss)

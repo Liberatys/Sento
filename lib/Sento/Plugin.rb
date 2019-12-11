@@ -25,4 +25,8 @@ class Plugin < Plugger
       Platform::UNIX
     end
   end
+
+
+  def reflect(_args)
+  end
 end

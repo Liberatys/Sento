@@ -3,5 +3,5 @@
 module Platform
   WINDOWS = 1
   MACOS = 2
-  LINUX = 3
+  UNIX = 3
 end

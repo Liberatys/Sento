@@ -5,7 +5,6 @@
 > * Adding ci tests
 > * Add labels to repo, remove old branches
 * Expand on command-line flags and configuration
-* Think of a plugin repository like crates.io
 * Add template file for plugin
 * Alter calls to raise and puts to the logger.pipe function
 * Finding people to test the application
