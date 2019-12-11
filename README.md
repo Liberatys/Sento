@@ -43,6 +43,7 @@ Sento can be used on any platform, that supports ruby and has people writing plu
   * VSCode
   * Choco
   * Folder Structure
+* **Inital plugin loader**
 
 ## Versioning
 This project is using semantic versioning.
@@ -51,13 +52,12 @@ Thus following the pattern of: **major.minor.patch**
 **Version**: 0.1.0
 
 
-
 ## List of Plugins
 * [Brew | Liberatys](Plugins/Brew.md)
 * [Choco | Liberatys](Plugins/Choco.md)
 * [Vscode Extensions | Liberatys](Plugins/VSCode_Extensions.md)
 * [Folder Structure | Liberatys](Plugins/Folder_Structure.md)
-
+* [Environment | Liberatys](Plugin/Environment.md)
 
 **Your plugin could be here.... just pull that request**
 

@@ -1,0 +1,2 @@
+class ArgumentReader
+end

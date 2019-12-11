@@ -13,15 +13,14 @@ Add the following to the Sento bin file.
 
 In the .sonol file add
 
-
 replace mysql, nvim and vim with the packages of your choice
 
 ## Information
 
-[Code](CODE_PATH)
+[Code](../lib/Sento/Plugins/environment_plug.rb)
 
-[Author | Author_Name ](https://github.com/USERNAME)
+[Author | Liberatys ](https://github.com/Liberatys)
 
 **Publication-Date: INSERT_DATE**
 
-**Version: X.X.X**
+**Version: 1.0.0**
