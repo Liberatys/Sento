@@ -58,6 +58,7 @@ Thus following the pattern of: **major.minor.patch**
 * [Vscode Extensions | Liberatys](Plugins/VSCode_Extensions.md)
 * [Folder Structure | Liberatys](Plugins/Folder_Structure.md)
 * [Environment | Liberatys](Plugin/Environment.md)
+* [Pacman | Liberatys](Plugins/Pacman.md)
 
 **Your plugin could be here.... just pull that request**
 

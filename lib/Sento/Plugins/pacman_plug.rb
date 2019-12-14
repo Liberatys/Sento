@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require_relative 'Sento.rb'
+require_relative '../Plugin.rb'
 require 'os'
 
-class BrewPlugin < Plugin
-  @@base_command = 'brew'
+class PacmanPlugin < Plugin
+  @@base_command = 'pacmanc'
 
   def install(arguments)
-    if supported_platform?([Platform::MACOS]) == false
-      return 'The brew plugin is only available on MacOs | OsX'
+    if supported_platform?([Platform::UNIX]) == false
+      return 'The brew plugin is only available on Linux | Linux'
     end
 
     progress_list = []
@@ -30,8 +30,8 @@ class BrewPlugin < Plugin
   end
 
   def upgrade(arguments)
-    if supported_platform?([Platform::MACOS]) == false
-      return 'The brew plugin is only available on MacOs | OsX'
+    if supported_platform?([Platform::UNIX]) == false
+      return 'The brew plugin is only available on Linux | Unix'
     end
 
     progress_list = []
