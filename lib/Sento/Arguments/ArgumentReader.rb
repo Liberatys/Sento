@@ -41,4 +41,13 @@ class ArgumentReader
   def get_flag_set
     return @flag_sets
   end
+
+  def flags_are_set?(flags)
+    flags.each do |flag|
+      if @flag_sets[flag].nil? or @flag_sets[flag].empty?
+        return false
+      end
+    end
+    return true
+  end
 end

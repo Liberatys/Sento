@@ -23,10 +23,19 @@ Will call the functions from the plugin extensions in the plugin vscode, where v
 ## What Sento can be used for
 
 The first thing that comes to mind the setup procedure for a new employee in the company.
-Install Sento on his computer and run a precompiled list of installations on your own plugins.
+Install Sento on his computer and run a fixed list of installations on your own plugins.
 
-In the beginning, the tool was only ment for MacOs. But now some hours into the project, I have given up that.
+In the beginning, the tool was only meant for MacOs. But now some hours into the project, I gave up on that.
 Sento can be used on any platform, that supports ruby and has people writing plugins for.
+
+
+## Usage
+
+After the installation of Sento in your system and the setup of a file with the accepted format for Sento.
+
+You can execute all plugin calls with the following command:
+
+	Sento -i formated_plugin_calls -o output_file_for_log -p plugin_file
 
 ## Features
 
@@ -53,15 +62,14 @@ Thus following the pattern of: **major.minor.patch**
 
 
 ## List of Plugins
-* [Brew | Liberatys](Plugins/Brew.md)
-* [Choco | Liberatys](Plugins/Choco.md)
-* [Vscode Extensions | Liberatys](Plugins/VSCode_Extensions.md)
-* [Folder Structure | Liberatys](Plugins/Folder_Structure.md)
-* [Environment | Liberatys](Plugin/Environment.md)
-* [Pacman | Liberatys](Plugins/Pacman.md)
+* [Brew](Plugins/Brew.md)
+* [Choco](Plugins/Choco.md)
+* [Vscode Extensions](Plugins/VSCode_Extensions.md)
+* [Folder Structure](Plugins/Folder_Structure.md)
+* [Environment](Plugin/Environment.md)
+* [Pacman](Plugins/Pacman.md)
 
 **Your plugin could be here.... just pull that request**
-
 
 ## Examples
 

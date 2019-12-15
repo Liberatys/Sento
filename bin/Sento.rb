@@ -31,10 +31,9 @@ def build_abyss
   if @reader.get_flag_value_for_key('-p').nil? == false
     abyss = load_by_file(@reader.get_flag_value_for_key('-p').get_values[0], abyss)
   else
+# just for default
     abyss.add_plugin('root.folder_structure', FolderStructurePlugin.new('folder_structure'))
   end
-  # ! load plugins
-  # ! abyss = load_by_file
   abyss
 end
 
@@ -46,15 +45,13 @@ def load_by_file(_file_string, abyss)
   loaded_plugins.each do |plug|
     abyss.add_plugin(plug.get_plugin_path, plug.get_plugin)
   end
-
   abyss
 end
 
 def read_command_line_args
   input_file_flag = @reader.get_flag_value_for_key('-i')
   raise 'no configuration was provided | set -i flag' if input_file_flag.nil?
-
-  input_file_flag.get_values[0]
+  return input_file_flag.get_values[0]
 end
 
 def read_command_line_arguments
@@ -62,13 +59,12 @@ def read_command_line_arguments
   if input_args.empty?
     raise 'Insufficient commandline arguments | No filepath specified'
   end
-
   file_path, *arguments = ARGV
   raise "Invalid filepath #{file_path}" unless File.file?(file_path)
-
   File.expand_path(file_path)
 end
 
 @reader = ArgumentReader.new(ARGV)
 @reader.parse_arguments(['-i', '-o', '-p', '-h'])
+
 run_sento(read_command_line_args, build_abyss)

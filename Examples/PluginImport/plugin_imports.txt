@@ -1,0 +1,1 @@
+PacmanPlugin | ../path/to/plugin/ | root.pacman | pacman
