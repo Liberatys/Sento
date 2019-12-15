@@ -1,41 +1,68 @@
 # Sento
 
-## Idea
-The idea of the application is to have a configuration tool, that reads a formated file and executes certain actions on a plugin in the backend.
+## Usage
 
-Example:
+### Configuration Example
 
     [plug.brew]
     mysql
 
-This format would be parsed als following:
+    [plug.vscode]
+    ms-vscode.go
 
-    Call Plugin [brew] and run the install function with the argument (mysql).
-    The Plugin [brew] is stored and managed by the plugger [plug].
-    This plugin will then go into the backend and execute the needed functions in order to install mysql from brew.
+A plugin can also be called on different methods. The default method for all plugins is **install**.
+To use a different method, that you have implement for one of your plugins use:
 
-Each plugin may also have other plugins connected to it. Those sup-plugins can then be access over the seperation with dots.
+	[plug.my_plugin | method_name]
 
-    [plug.vscode.extensions]
+Now all calls to the plugin will go over **method_name**.
 
-Will call the functions from the plugin extensions in the plugin vscode, where vscode is managed by the plugger [plug].
+### Plugin-Loader Example
+---
+	PacmanPlugin | ../Plugs/pacman_plug.rb | root.pacman | pacman
+	ChocoPlugin | ../Plugs/choco_plug.rb | root.choco | choco
+	BrewPlugin | ../Plugs/brew_plug.rb | root.brew | brew
+	FolderStructurePlugin | ../Plugs/folder_struct_plugin.rb | root.folder_struct | folder_struct
+	VSCodePlugin | ../Plugs/vscode_plug.rb | root.vscode | vscode
 
-## What Sento can be used for
+### Disabling Calls
+---
+If you want to keep a plugin call in your config file but not execute it, you can simply disable the call with:
 
-The first thing that comes to mind the setup procedure for a new employee in the company.
-Install Sento on his computer and run a fixed list of installations on your own plugins.
-
-In the beginning, the tool was only meant for MacOs. But now some hours into the project, I gave up on that.
-Sento can be used on any platform, that supports ruby and has people writing plugins for.
+	![plug.my_plugin]
 
 
-## Usage
+The same works with the plugins in the loader file:
+
+	!PacmanPlugin | ../Plugs/pacman_plug.rb | root.pacman | pacman
+
+
+### Running the configuration
+---
 
 After the installation of Sento in your system and the setup of a file with the accepted format for Sento.
 
 You can execute all plugin calls with the following command:
 
 	Sento -i formated_plugin_calls -o output_file_for_log -p plugin_file
+
+If you want to get a list of all plugins on all pluggers you have inserted into the system, you can do that like:
+
+	Sento -i formated_plugin_calls -p output_file_for_log -p plugin_file -v
+
+the **-v** flag will call a method into the abyss and display a list of all plugins, by iterating over all entries in the abyss.
+
+---
+
+`At the moment ! is not a valid character in a plugin call and thus will not be read`
+
+## What Sento can be used for
+
+The first thing that comes to mind is the setup procedure for a new employee in a company.
+Install Sento on his computer and run a fixed list of installations on your own plugins.
+
+Another is the easy setup for home machines by aggregating lists of you applications
+and have them installed with the platform specific package manager. **Use the brew plugin on mac and the pacman plugin on arch.**
 
 ## Features
 
@@ -47,12 +74,13 @@ You can execute all plugin calls with the following command:
 ## Progress
 
 * Functional plugin framework, that allows drop in plugins for your need
+* External plugin loading
+* Easy drop in logger methods
 * **First working plugins**
   * Brew
   * VSCode
   * Choco
   * Folder Structure
-* **Inital plugin loader**
 
 ## Versioning
 This project is using semantic versioning.
@@ -60,13 +88,19 @@ Thus following the pattern of: **major.minor.patch**
 
 **Version**: 0.1.0
 
+## Plugin
 
-## List of Plugins
+### Your own Plugin
+
+Information about plugins as well as creating your own plugins can be found [here](Plugins/Plugins.md).
+<br />
+As a source of inspiration, please see the plugin list below.
+
+### List of Plugins
 * [Brew](Plugins/Brew.md)
 * [Choco](Plugins/Choco.md)
 * [Vscode Extensions](Plugins/VSCode_Extensions.md)
 * [Folder Structure](Plugins/Folder_Structure.md)
-* [Environment](Plugin/Environment.md)
 * [Pacman](Plugins/Pacman.md)
 
 **Your plugin could be here.... just pull that request**

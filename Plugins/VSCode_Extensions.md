@@ -6,9 +6,10 @@ The VSCode-Extensions plugin is able to install, update as well as uninstall pac
 
 ## Usage
 
-Add the following to the Sento bin file.
+Add the following to your plugin loader
     
-    abyss.add_plugin("root.vscode", VSCodePlugin.new("vscode"))
+    VSCodePlugin | path_to_plugin | root.vscode | vscode
+
 
 In the .sonol file add
 

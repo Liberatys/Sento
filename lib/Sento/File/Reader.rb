@@ -6,7 +6,7 @@ class Reader
     @abs_path = ''
   end
 
-  def validet_file_path
+  def validate_file_path
     @abs_path = File.expand_path(@file_path)
     is_valid = File.file?(@abs_path)
     return true if is_valid

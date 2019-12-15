@@ -6,9 +6,9 @@ The brew plugin is able to install, update as well as uninstall packages that ar
 
 ## Usage
 
-Add the following to the Sento bin file.
+Add the following to your plugin loader
     
-    abyss.add_plugin("root.brew", BrewPlugin.new("brew"))
+    BrewPlugin | path_to_plugin | root.brew | brew
 
 
 In the .sonol file add

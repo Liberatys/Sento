@@ -1,0 +1,5 @@
+PacmanPlugin | ../Plugs/pacman_plug.rb | root.pacman | pacman
+ChocoPlugin | ../Plugs/choco_plug.rb | root.choco | choco
+BrewPlugin | ../Plugs/brew_plug.rb | root.brew | brew
+FolderStructurePlugin | ../Plugs/folder_struct_plugin.rb | root.folder_struct | folder_struct
+VSCodePlugin | ../Plugs/vscode_plug.rb | root.vscode | vscode

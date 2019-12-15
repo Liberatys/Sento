@@ -10,9 +10,14 @@ class PluginLoader
     if file_content.empty?
       file_content = @file_reader.get_file_content
     end
-    file_lines = file_content.split('\n')
+    file_lines = file_content.lines
     loads = []
     file_lines.each do |line|
+      if line.empty? == false
+        if line[0] == '!'
+          next
+        end
+      end
       plugin_class_name,plugin_path,plugin_route,plugin_name = extract_plugin_values(line)
       next if validate_file_path(plugin_path) == false
 

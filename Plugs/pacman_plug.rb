@@ -1,12 +1,13 @@
 # frozen_string_literal: true
-
-require_relative '../Plugin.rb'
+#
+require_relative File.expand_path('../lib/Sento.rb')
 require 'os'
 
 class PacmanPlugin < Plugin
-  @@base_command = 'pacman'
+  #! all pacman operations need to be executed as root
+  @@base_command = 'sudo pacman'
 
-  def completeUpdate(arguments)
+  def completeUpdate()
     act_on_package("","-Syu")
   end
 
@@ -22,7 +23,6 @@ class PacmanPlugin < Plugin
     end
     progress_list
   end
-  #TODO improve message for success or failure
   def act_on_package(package, operation)
     result = system("#{@@base_command} #{operation} #{package}")
     if result == true

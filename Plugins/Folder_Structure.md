@@ -7,9 +7,10 @@ The plugin will then create the entire given path.
 
 ## Usage
 
-Add the following to the Sento bin file.
+Add the following to your plugin loader
     
-    abyss.add_plugin("root.folder_struct", FolderStructurePlugin.new("folder_struct"))
+    FolderStructurePlugin | path_to_plugin | root.folder_struct | folder_struct
+
 
 In the .sonol file add
 

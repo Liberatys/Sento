@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../Plugin.rb'
+require_relative File.expand_path('../lib/Sento.rb')
 
 class VSCodePlugin < Plugin
   @@base_command = 'code'

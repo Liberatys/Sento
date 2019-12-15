@@ -35,4 +35,8 @@ class Abyss
   def log_message(entity, message, type)
     @heart.log_message(entity, message, type)
   end
+
+  def print_plugins
+    @heart.print_plugins
+  end
 end

@@ -1,0 +1,12 @@
+[root.pacman]
+calcurse
+
+![root.brew]
+calcurse
+
+[root.folder_struct | create]
+./this/is/a/folder
+
+[root.folder_struct | create_file]
+./this/is/a/folder/file.txt
+./this/is/a/folder/gogogo.txt

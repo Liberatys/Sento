@@ -1,4 +1,4 @@
-require_relative "../Plugin.rb"
+require_relative File.expand_path('../lib/Sento.rb')
 require "fileutils"
 #TODO expand on folder structure plugin
 class FolderStructurePlugin < Plugin
@@ -23,5 +23,6 @@ class FolderStructurePlugin < Plugin
       FileUtils.touch(argument)
       progress_list.push("Create file #{argument}")
     end
+    progress_list
   end
 end

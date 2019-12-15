@@ -7,10 +7,9 @@ The choco plugin is able to install, update as well as uninstall packages that a
 
 ## Usage
 
-Add the following to the Sento bin file.
+Add the following to your plugin loader
     
-    abyss.add_plugin("root.choco", ChocoPlugin.new("choco"))
-
+    ChocoPlugin | path_to_plugin | root.choco choco
 
 In the .sonol file add
 

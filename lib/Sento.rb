@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 require_relative './Sento/Heart'
 require_relative './Sento/Plugin'
 require_relative './Sento/Plugger'
@@ -9,7 +8,6 @@ require_relative './Sento/Abyss'
 require_relative './Sento/PathResolver'
 require_relative './Sento/File/Sento_File'
 require_relative './Sento/LogType'
-require_relative './Sento/Plugins/plugins'
 require_relative './Sento/Loggers/loggers'
 require_relative './Sento/Loader/loader.rb'
 require_relative './Sento/Arguments/arguments.rb'
@@ -50,7 +48,7 @@ end
 
 def get_file_content(file_path)
   file_reader = Reader.new(file_path)
-  unless file_reader.validet_file_path
+  unless file_reader.validate_file_path
     raise "#{file_path} is not a valid file path"
   end
 

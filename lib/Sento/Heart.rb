@@ -1,5 +1,5 @@
 class Heart
-  
+
   def initialize
     @plugin_count = 0
     @plugger = Hash.new
@@ -51,6 +51,16 @@ class Heart
   def log_message(entity, message, type)
     @loggers.each do |logger|
       logger.pipe(entity, message, type)
+    end
+  end
+
+  def print_plugins
+    @plugger.each do |key, value|
+      if value.nil? == false
+        puts "-> Plugins for #{key}:"
+        puts value.list_plugins(0)
+        puts ""
+      end
     end
   end
 

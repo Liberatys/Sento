@@ -6,12 +6,17 @@ The pacman plugin is a wrapper for the pacman package manager that can be used i
 
 ## Usage
 
-Add the following to the Sento bin file.
+Add the following to your plugin loader
 
-    abyss.add_plugin("root.pacman", PacmanPlugin.new("pacman"))
+    PacmanPlugin | path_to_plugin | root.pacman | pacman
+
 
 In the .sonol file add
 
+    [root.pacman]
+    mysql
+    nvim
+    vim
 
 replace mysql, nvim and vim with the packages of your choice
 
