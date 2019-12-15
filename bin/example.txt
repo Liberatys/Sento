@@ -1,2 +1,0 @@
-[root.folder_structure]
-./testing/exact/testing.txt

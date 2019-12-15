@@ -1,1 +1,0 @@
-2019-12-11 11:47:06 INFORMATION folder_structure The system called the default install method in a plugin, you have either not set the plugin method, or you haven't implemented this method yet | folder_structure

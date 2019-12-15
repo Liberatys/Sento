@@ -1,0 +1,2 @@
+[root.folder_structure | create]
+./testing/exact/testing.txt
