@@ -46,7 +46,17 @@ class FileConverter
         end
         current_iteration_string = ''
       else
-        current_iteration_string += character if character != '!'
+        if character != '!'
+          current_iteration_string += character
+        else
+          last_character = ''
+          if index > 0
+            last_character = @file_content[index]
+          end
+          if last_character == '['
+            current_iteration_string += character
+          end
+        end
       end
     end
     @plugin_map.add_brackets_value(current_iteration_string)
