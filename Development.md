@@ -26,4 +26,4 @@ So one would implement the Terminator class and its method. Without any implemen
 
 # Refactor
 
-After the tests are passing, one should go back to his code and refactor parts that seem difficult to maintain and work with. Because there are no clear definitions of what that really means, every contributor is free to decide what it means for them. But please keep in mind that other people have to work with the code and may find it difficult if you try to over simplify the code.
+After the tests are passing, one should go back to his code and refactor parts that seem difficult to maintain and work with. Because there are no clear definitions of what that really means, every contributor is free to decide what it means to them. But please keep in mind that other people have to work with the code and may find it difficult if you try to over simplify the code.
