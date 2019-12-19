@@ -1,31 +1,31 @@
-class Heart
+# frozen_string_literal: true
 
+class Heart
   def initialize
     @plugin_count = 0
-    @plugger = Hash.new
+    @plugger = {}
     @configurators = []
     @loggers = []
   end
 
   def add_plugin(path, plugin)
     if @plugin_count <= 0
-      raise "Heart | before adding a plugin, first add a root plugger"
+      raise 'Heart | before adding a plugin, first add a root plugger'
     end
+
     @plugin_count += 1
     resolver = PathResolver.new(path)
-    p resolver
-    head = resolver.get_current_path_head()
+    head = resolver.get_current_path_head
     plug = @plugger[head]
-    if plug == nil
-      raise "Heart | found no plugger with the name #{head}"
-    end
+    raise "Heart | found no plugger with the name #{head}" if plug.nil?
+
     plug.add_plugin(resolver, plugin)
   end
 
   def add_plugger(plugger)
     @plugin_count += 1
     @plugger[plugger.name] = plugger
-    return true
+    true
   end
 
   def add_configurator(configurator)
@@ -38,6 +38,7 @@ class Heart
 
   def add_logger(logger)
     return false unless logger.is_a?(Logger)
+
     @loggers.push(logger)
   end
 
@@ -45,7 +46,7 @@ class Heart
     @loggers
   end
 
-  def get_plugin_count()
+  def get_plugin_count
     @plugin_count
   end
 
@@ -57,11 +58,11 @@ class Heart
 
   def print_plugins
     @plugger.each do |key, value|
-      if value.nil? == false
-        puts "-> Plugins for #{key}:"
-        puts value.list_plugins(0)
-        puts ""
-      end
+      next unless value.nil? == false
+
+      puts "-> Plugins for #{key}:"
+      puts value.list_plugins(0)
+      puts ''
     end
   end
 
@@ -69,15 +70,13 @@ class Heart
     if path.empty?
       raise "Heart | resolve_plugin_path must be given a valid path #{path} is invalid"
     end
-    if path == "-"
-      return @plugger["root"]
-    end
+    return @plugger['root'] if path == '-'
+
     resolver = PathResolver.new(path)
-    resolved_path = resolver.get_current_path_head()
+    resolved_path = resolver.get_current_path_head
     plug = @plugger[resolved_path]
-    if plug == nil
-      return "No plugger with the head path #{resolved_path}"
-    end
+    return "No plugger with the head path #{resolved_path}" if plug.nil?
+
     plug.resolve_plugin(resolver)
   end
 end
