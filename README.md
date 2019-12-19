@@ -26,7 +26,7 @@ Now all calls to the plugin will go over **method_name**.
 	VSCodePlugin | ../Plugs/vscode_plug.rb | root.vscode | vscode
 
 If no plugger is provided for the plugin import such as "root", the system will pick "root" as the default.
-That means that:
+**his means that:**
 
 	PacmanPlugin | ../Plugs/pacman_plug.rb | root.pacman | pacman
 
@@ -71,7 +71,7 @@ The first thing that comes to mind is the setup procedure for a new employee in 
 Install Sento on his computer and run a fixed list of installations on your own plugins.
 
 Another is the easy setup for home machines by aggregating lists of you applications
-and have them installed with the platform specific package manager. **Use the brew plugin on mac and the pacman plugin on arch.**
+and have them installed with the platform-specific package manager. **Use the brew plugin on mac and the pacman plugin on arch.**
 
 ## Features
 
@@ -101,7 +101,7 @@ Thus following the pattern of: **major.minor.patch**
 
 ### Your own Plugin
 
-Information about plugins as well as creating your own plugins can be found [here](Plugins/Plugins.md).
+Information about plugins as well as information on creating your own plugins can be found [here](Plugins/Plugins.md).
 <br />
 As a source of inspiration, please see the plugin list below.
 
