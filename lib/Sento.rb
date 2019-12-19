@@ -26,7 +26,6 @@ def collect_plugin_calls(file_content)
   unless sonol_object.is_a?(Sonol)
     raise 'Invalid file content | Error whilst parsing file'
   end
-
   sonol_object.build_plugin_calls
   sonol_object.get_plugin_calls
 end

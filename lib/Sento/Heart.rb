@@ -14,7 +14,7 @@ class Heart
     end
 
     @plugin_count += 1
-    resolver = PathResolver.new(path)
+    resolver = PathResolver.new(path,true)
     head = resolver.get_current_path_head
     plug = @plugger[head]
     raise "Heart | found no plugger with the name #{head}" if plug.nil?

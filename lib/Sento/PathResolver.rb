@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class PathResolver
-  def initialize(path)
-    if path.split('.').length == 1
+  def initialize(path,auto_plug=false)
+    if path.split('.').length == 1 && auto_plug == true
       path = "root."+path
     end
     @path = path
