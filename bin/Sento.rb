@@ -40,17 +40,6 @@ def build_abyss
   abyss
 end
 
-def load_by_file(_file_string, abyss)
-  file_reader = Reader.new(_file_string)
-  file_reader.validate_file_path
-  loader = PluginLoader.new(file_reader)
-  loaded_plugins = loader.load_plugins
-  loaded_plugins.each do |plug|
-    abyss.add_plugin(plug.get_plugin_path, plug.get_plugin)
-  end
-  abyss
-end
-
 def read_command_line_args
   input_file_flag = @reader.get_flag_value_for_key('-i')
   raise 'no configuration was provided | set -i flag' if input_file_flag.nil?

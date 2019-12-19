@@ -10,10 +10,14 @@ class BrewPlugin < Plugin
     if supported_platform?([Platform::MACOS]) == false
       return 'The brew plugin is only available on MacOs | OsX'
     end
-
     progress_list = []
     arguments.each do |package|
-      progress_list.push(act_on_package(package, 'install'))
+      result = act_on_package(package, 'install')
+      if result == "Unknown command"
+        return result
+      else
+        progress_list.push(result)
+      end
     end
     progress_list
   end
@@ -33,11 +37,12 @@ class BrewPlugin < Plugin
     if supported_platform?([Platform::MACOS]) == false
       return 'The brew plugin is only available on MacOs | OsX'
     end
-
-    progress_list = []
-    arguments.each do |package|
-      progress_list.push(act_on_package(package, 'upgrade'))
-    end
+      result = act_on_package(package, 'upgrade')
+      if result == "Unknown command"
+        return result
+      else
+        progress_list.push(result)
+      end
     progress_list
   end
 

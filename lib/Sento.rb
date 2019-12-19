@@ -31,12 +31,23 @@ def collect_plugin_calls(file_content)
   sonol_object.get_plugin_calls
 end
 
+
+def load_by_file(_file_string, abyss)
+  file_reader = Reader.new(_file_string)
+  file_reader.validate_file_path
+  loader = PluginLoader.new(file_reader)
+  loaded_plugins = loader.load_plugins
+  loaded_plugins.each do |plug|
+    abyss.add_plugin(plug.get_plugin_path, plug.get_plugin)
+  end
+  abyss
+end
+
 def execute_plugins(_file_content, abyss)
   plugin_calls = collect_plugin_calls(_file_content)
   plugin_calls.each do |plugin_call|
     plugin = abyss.resolve_plugin_path(plugin_call.plugin_name)
     raise plugin unless plugin.is_a?(Plugger)
-
     progress_message = plugin.public_send(plugin_call.get_plugin_method, plugin_call.get_arguments)
     if progress_message == 'Unknown command'
       abyss.log_message(plugin.name, 'Unknown command', LogType::WARNING)

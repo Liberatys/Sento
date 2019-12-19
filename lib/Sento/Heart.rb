@@ -13,6 +13,7 @@ class Heart
     end
     @plugin_count += 1
     resolver = PathResolver.new(path)
+    p resolver
     head = resolver.get_current_path_head()
     plug = @plugger[head]
     if plug == nil

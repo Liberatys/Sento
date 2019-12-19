@@ -2,6 +2,9 @@
 
 class PathResolver
   def initialize(path)
+    if path.split('.').length == 1
+      path = "root."+path
+    end
     @path = path
     @static_path = path
   end

@@ -14,6 +14,7 @@ class PluginLoader
     loads = []
     file_lines.each do |line|
       if line.empty? == false
+        #! skips all calls prefixed by a !
         if line[0] == '!'
           next
         end
@@ -52,4 +53,5 @@ class PluginLoader
     path = File.expand_path(file_path)
     load path
   end
+
 end

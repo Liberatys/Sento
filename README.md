@@ -25,6 +25,15 @@ Now all calls to the plugin will go over **method_name**.
 	FolderStructurePlugin | ../Plugs/folder_struct_plugin.rb | root.folder_struct | folder_struct
 	VSCodePlugin | ../Plugs/vscode_plug.rb | root.vscode | vscode
 
+If no plugger is provided for the plugin import such as "root", the system will pick "root" as the default.
+That means that:
+
+	PacmanPlugin | ../Plugs/pacman_plug.rb | root.pacman | pacman
+
+**is the same as**
+
+	PacmanPlugin | ../Plugs/pacman_plug.rb | pacman | pacman
+
 ### Disabling Calls
 ---
 If you want to keep a plugin call in your config file but not execute it, you can simply disable the call with:

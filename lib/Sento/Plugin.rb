@@ -26,7 +26,6 @@ class Plugin < Plugger
     end
   end
 
-
   def reflect(_args)
   end
 end
