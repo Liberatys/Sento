@@ -26,7 +26,7 @@ Now all calls to the plugin will go over **method_name**.
 	VSCodePlugin | ../Plugs/vscode_plug.rb | root.vscode | vscode
 
 If no plugger is provided for the plugin import such as "root", the system will pick "root" as the default.
-**his means that:**
+**this means that:**
 
 	PacmanPlugin | ../Plugs/pacman_plug.rb | root.pacman | pacman
 
